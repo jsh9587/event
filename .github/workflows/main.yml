@@ -19,6 +19,10 @@ jobs:
           mkdir -p ~/.ssh
           echo "$EC2_SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          # 디렉터리와 파일 권한 설정
+          chmod 700 ~/.ssh
+          # 필요시, 키 파일 포맷이 잘못된 경우 문제가 생길 수 있으므로, 파일 내용 확인도 필요
+          cat ~/.ssh/id_rsa  # 디버깅을 위한 출력 (출력 후 민감한 내용은 삭제)
 
       - name: Add EC2 server to known_hosts
         run: |
