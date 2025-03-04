@@ -16,7 +16,7 @@ jobs:
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
-          # GitHub Secrets에 저장된 SSH 키를 id_rsa 파일에 저장
+          # GitHub Secrets에 저장된 PEM 키를 id_rsa 파일에 저장
           echo "$EC2_SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           # EC2 서버의 공개 키를 known_hosts에 추가
